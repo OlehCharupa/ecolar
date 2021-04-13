@@ -1,0 +1,24 @@
+.header {
+  background-color: rgb(15, 207, 56);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  z-index: 100;
+}
+.btn:focus {
+  outline: none;
+}
+.body {
+  overflow: hidden;
+}

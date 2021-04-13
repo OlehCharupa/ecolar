@@ -1,0 +1,13 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+}
+.link {
+  color: #fff;
+}
+
+@media screen and (min-width: 1440px) {
+  .navigation {
+    flex-direction: row;
+  }
+}

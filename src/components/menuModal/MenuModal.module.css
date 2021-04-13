@@ -1,0 +1,14 @@
+.modal {
+  background-color: rgb(48, 131, 240);
+
+  position: fixed;
+  top: 72px;
+  left: 0;
+
+  width: 100%;
+  padding: 25px 0;
+  text-align: center;
+  height: calc (100% - 72px);
+
+  z-index: 10;
+}
