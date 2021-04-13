@@ -1,7 +1,7 @@
 .header {
-  background-color: rgb(15, 207, 56);
-  padding-top: 20px;
-  padding-bottom: 20px;
+  background-color: #f7f7f7;
+  padding-top: 36px;
+  padding-bottom: 36px;
 }
 .wrapper {
   display: flex;
@@ -21,4 +21,9 @@
 }
 .body {
   overflow: hidden;
+}
+@media screen and (min-width: 1440px) {
+  .wrapper {
+    justify-content: start;
+  }
 }

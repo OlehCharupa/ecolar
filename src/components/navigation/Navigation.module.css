@@ -1,13 +1,39 @@
 .navigation {
   display: flex;
   flex-direction: column;
+  padding: 80px 0;
 }
 .link {
-  color: #fff;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 1.5;
+  /* identical to box height, or 150% */
+
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  /* second-text-color */
+
+  color: #737373;
+}
+.link:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 @media screen and (min-width: 1440px) {
   .navigation {
     flex-direction: row;
+    padding: 0;
+  }
+  .link {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  .link:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 20px;
   }
 }
