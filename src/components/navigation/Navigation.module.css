@@ -8,12 +8,9 @@
   font-weight: normal;
   font-size: 30px;
   line-height: 1.5;
-  /* identical to box height, or 150% */
 
   text-align: center;
   letter-spacing: 0.2px;
-
-  /* second-text-color */
 
   color: #737373;
 }
@@ -21,7 +18,7 @@
   margin-bottom: 30px;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .navigation {
     flex-direction: row;
     padding: 0;

@@ -29,7 +29,7 @@ const Header = () => {
             <Container>
                 <div className={styles.wrapper}>
                     <Logo />
-                    {onlyWidth < 1439 ? <button
+                    {onlyWidth < 1199 ? <button
                         type="button"
                         className={styles.btn}
                         aria-label="menu"

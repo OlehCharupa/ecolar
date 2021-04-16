@@ -17,10 +17,10 @@
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .container {
     padding-left: 200px;
     padding-right: 200px;
-    width: 1440px;
+    width: 1200px;
   }
 }

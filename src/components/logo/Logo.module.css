@@ -11,7 +11,7 @@
 
   color: #252b42;
 }
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1200px) {
   .test {
     margin-right: 115px;
   }

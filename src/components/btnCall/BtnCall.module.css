@@ -1,0 +1,17 @@
+.btn {
+  display: block;
+  max-width: max-content;
+  padding: 15px 35px;
+  background: #ffa62b;
+  border-radius: 37px;
+  text-transform: uppercase;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 2;
+
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  color: #ffffff;
+}

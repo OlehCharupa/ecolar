@@ -12,26 +12,26 @@ const Navigation = ({ onModalClose = null }) => {
             <a
                 href='/#about'
                 className={styles.link}
-                onClick={() => { onlyWidth < 1439 && onModalClose && onModalClose() }}>
+                onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                 Про нас
                 </a>
             <a
                 href='/#contacts'
                 className={styles.link}
-                onClick={() => { onlyWidth < 1439 && onModalClose && onModalClose() }}>
+                onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                 Контакти
                 </a>
             <a
                 href='/#form'
                 className={styles.link}
-                onClick={() => { onlyWidth < 1439 && onModalClose && onModalClose() }}>
+                onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                 Зворотній звязок
                 </a>
             <NavLink
                 key='login'
                 to='/login'
                 className={styles.link}
-                onClick={() => { onlyWidth < 1439 && onModalClose && onModalClose() }}>
+                onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                 Вхід
                 </NavLink>
         </nav>
