@@ -1,6 +1,9 @@
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+  font-style: normal;
+
+  background-color: #f7f7f7;
 }
 
 *,
@@ -13,8 +16,8 @@ a {
 }
 img {
   display: block;
+  max-width: 100%;
   height: auto;
-  margin: 0 auto;
 }
 ul {
   list-style: none;

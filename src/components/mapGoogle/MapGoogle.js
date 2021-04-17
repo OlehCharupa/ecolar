@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
-import styles from './MapGoogle.module.css'
+// import styles from './MapGoogle.module.css'
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 class MapGoogle extends Component {
     render() {
+        const style = {
+            width: '100%',
+            height: '100%'
+        }
+        const containerStyle = {
+            position: 'relative',
+            width: '100%',
+            height: '100%'
+        }
         return (
             <Map
                 google={this.props.google}
                 zoom={17}
-                style={{ width: '50%', height: '50%', position: 'relative' }}
-                // className={styles.map}
+                // style={style}
+                containerStyle={containerStyle}
                 initialCenter={{ lat: 50.430889666863564, lng: 30.47317272710909 }}
             />
         );

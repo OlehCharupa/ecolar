@@ -14,11 +14,11 @@ const HomePage = () => {
             <ScrollableAnchor id={'contacts'} >
                 <Contacts />
             </ScrollableAnchor>
-            <ScrollableAnchor id={'form'} >
+            {/* <ScrollableAnchor id={'form'} >
                 <div className={styles.div}>
                     <h2>Form</h2>
                 </div>
-            </ScrollableAnchor>
+            </ScrollableAnchor> */}
 
         </>
     );
