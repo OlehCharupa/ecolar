@@ -3,6 +3,7 @@ import styles from './HomePage.module.css'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import About from '../../components/about/About';
 import Contacts from '../../components/contacts/Contacts';
+import Services from '../../components/servicesSection/Services';
 
 
 const HomePage = () => {
@@ -10,6 +11,9 @@ const HomePage = () => {
         <>
             <ScrollableAnchor id={'about'} >
                 <About />
+            </ScrollableAnchor>
+            <ScrollableAnchor id={'services'} >
+                <Services />
             </ScrollableAnchor>
             <ScrollableAnchor id={'contacts'} >
                 <Contacts />
