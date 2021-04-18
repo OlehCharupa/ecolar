@@ -27,13 +27,13 @@ const Navigation = ({ onModalClose = null }) => {
                 onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                 Зворотній звязок
                 </a>
-            <NavLink
+            {/* <NavLink
                 key='login'
                 to='/login'
                 className={styles.link}
                 onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                 Вхід
-                </NavLink>
+                </NavLink> */}
         </nav>
     );
 };

@@ -6,7 +6,7 @@ const LoginPage = () => {
     return (
         <Container>
             <img alt="oops" width='300' className={styles.imageError}
-                src="https://lh3.googleusercontent.com/proxy/jcJUilNppeY-uXRXhT_fSZwYSt4PlHOAp9E37ZzqYLS7nbrcUajzlC7eP61ohhSTL6WN9lBH0bN3mVDQPI33" />
+                src="https://kulturnay-stolica.ru/wp-content/uploads/2019/10/1.jpg" />
         </Container>
     );
 };
