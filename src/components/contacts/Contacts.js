@@ -19,7 +19,7 @@ const Contacts = () => {
                         </li>
                         <li className={styles.address_item}>
                             <h3 className={styles.subtitle}>Телефон:</h3>
-                            <a href="tel:+380001111111" className={styles.addressLink}>+38 000 111 11 11</a>
+                            <a href="tel:+380666013002" className={styles.addressLink}>+38 066 601 30 02</a>
                         </li>
                     </ul>
                     <div className={styles.wrapperMap}>
