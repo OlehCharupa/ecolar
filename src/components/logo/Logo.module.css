@@ -1,18 +1,24 @@
-.text {
+/* .text {
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 1.33;
-  /* identical to box height, or 133% */
 
   letter-spacing: 0.1px;
 
-  /* text-color */
 
   color: #252b42;
 }
 @media screen and (min-width: 1200px) {
   .test {
     margin-right: 115px;
+  }
+} */
+.logo {
+  width: 100px;
+}
+@media screen and (min-width: 768px) {
+  .logo {
+    width: 150px;
   }
 }

@@ -5,7 +5,7 @@ import styles from './About.module.css'
 
 const About = () => {
     return (
-        <section className={styles.bc_image}>
+        <section className={styles.bc_image} id='about'>
             <Container>
                 <div className={styles.wrapper}>
                     <h1 className={styles.title}>Про нас</h1>

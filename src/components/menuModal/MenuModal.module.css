@@ -2,13 +2,16 @@
   background-color: #f7f7f7;
 
   position: fixed;
-  top: 100px;
+  top: 90px;
   left: 0;
 
   width: 100%;
-  padding: 25px 0;
   text-align: center;
-  /* height: calc (100% - 104px); */
 
   z-index: 10;
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    top: 110px;
+  }
 }

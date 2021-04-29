@@ -1,6 +1,13 @@
 .services {
+  /* margin: 0 auto;
+  max-width: 1440px; */
   padding-top: 60px;
   padding-bottom: 60px;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 56, 123, 0.4),
+    rgba(0, 56, 123, 0.4)
+  );
 }
 .title {
   font-weight: 700;

@@ -1,0 +1,12 @@
+.footer {
+  padding: 25px 0;
+}
+.text {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.71;
+
+  letter-spacing: 0.2px;
+
+  color: #737373;
+}

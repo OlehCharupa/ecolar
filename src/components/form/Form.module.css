@@ -1,5 +1,10 @@
 .section_form {
   padding: 60px 0;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 56, 123, 0.4),
+    rgba(0, 56, 123, 0.4)
+  );
 }
 .title {
   font-weight: 700;
@@ -12,10 +17,11 @@
   margin-bottom: 20px;
 }
 .form_wrapper {
-  width: 50%;
+  width: 100%;
 }
 .box {
   margin-bottom: 15px;
+  position: relative;
 }
 .form_label {
   display: block;
@@ -38,8 +44,21 @@
   letter-spacing: 0.2px;
 
   color: #737373;
+  border-radius: 10px;
+  border: 2px solid #252b42;
 
   width: 100%;
+}
+.err_msg {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: 0.2px;
+  color: red;
 }
 .button {
   display: block;
@@ -58,4 +77,29 @@
 
   color: #ffffff;
   border: none;
+  cursor: pointer;
+}
+.dis_btn {
+  display: block;
+  max-width: max-content;
+  padding: 15px 35px;
+  background: #e7cda9;
+  border-radius: 37px;
+  text-transform: uppercase;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 2;
+
+  text-align: center;
+  letter-spacing: 0.2px;
+
+  color: #ffffff;
+  border: none;
+  cursor: not-allowed;
+}
+@media screen and (min-width: 1200px) {
+  .form_wrapper {
+    width: 50%;
+  }
 }

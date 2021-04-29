@@ -1,11 +1,17 @@
 import React from 'react';
 import styles from './BtnCall.module.css'
+import { Link, animateScroll as scroll } from "react-scroll";
+
 
 const BtnCall = () => {
     return (
-        <a href='/#form' className={styles.btn}>
+        <Link className={styles.btn}
+            to='form'
+            spy={true}
+            smooth={true}
+            duration={800}        >
             замовити дзвінок
-        </a>
+        </Link>
     );
 };
 

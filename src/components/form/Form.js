@@ -1,37 +1,194 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
 import Container from '../сontainer/Container';
 import styles from './Form.module.css'
 
+const initialData = {
+    name: "",
+    number: "",
+    email: "",
+    description: "",
+    date: ""
+}
+
 const Form = () => {
+    const [data, setData] = useState(initialData)
+    const { name, number, email, description } = data
+    const [nameDirty, setNameDirty] = useState(false)
+    const [nameError, setNameError] = useState('Поле не може бути пустим')
+
+    const [numberDirty, setNumberDirty] = useState(false)
+    const [numberError, setNumberError] = useState('Поле не може бути пустим')
+
+
+    const [emailDirty, setEmailDirty] = useState(false)
+    const [emailError, setEmailError] = useState('Поле не може бути пустим')
+    const [formValid, setFormValid] = useState(false)
+
+    useEffect(() => {
+        if (emailError || nameError || numberError) {
+            setFormValid(false)
+        } else {
+            setFormValid(true)
+        }
+    }, [emailError, nameError, numberError])
+
+    const emailHandler = (e) => {
+        setData((prev) => ({ ...prev, email: e.target.value }))
+        if (emailDirty) {
+            setEmailDirty(false)
+        }
+        // eslint-disable-next-line no-useless-escape
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        if (!e.target.value) {
+            setEmailError("Поле не може бути пустим")
+        } else if (!re.test(String(e.target.value).toLowerCase())) {
+            setEmailError("Некоректний Email")
+        } else {
+            setEmailError('')
+        }
+    }
+    const numberHandler = ({ target }) => {
+        setData((prev) => ({ ...prev, number: target.value }))
+        if (numberDirty) {
+            setNumberDirty(false)
+        }
+        const re = /^[ 0-9]+$/
+
+        if (!target.value) {
+            setNumberError('Поле не може бути пустим')
+        } else if (!re.test(target.value)) {
+            setNumberError('Некоректний номер')
+        }
+        else {
+            setNumberError('')
+        }
+    }
+    const nameHandler = ({ target }) => {
+        setData((prev) => ({ ...prev, name: target.value }))
+        if (nameDirty) {
+            setNameDirty(false)
+        }
+        if (!target.value) {
+            setNameError('Поле не може бути пустим')
+        } else {
+            setNameError('')
+        }
+    }
+
+    const descHandler = ({ target }) => {
+        setData({ ...data, description: target.value })
+    }
+    const handleBlur = ({ target }) => {
+        switch (target.name) {
+            case 'name':
+                setNameDirty(true)
+                break;
+            case 'number':
+                setNumberDirty(true)
+                break;
+            case 'email':
+                setEmailDirty(true)
+                break;
+            default:
+        }
+    }
+
+
+    const postOrder = async (newOrder) => {
+        try {
+            const result = await axios.post('https://bcecolar.herokuapp.com/call', { ...newOrder })
+            console.log(result);
+            console.log(newOrder);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const currentDateTime = () => {
+        const currentDate = new Date()
+        const Year = currentDate.getFullYear();
+        const Month = currentDate.getMonth();
+        const Day = currentDate.getDate();
+        const Hour = currentDate.getHours();
+        const Minutes = currentDate.getMinutes();
+        const Seconds = currentDate.getSeconds();
+        return `${Day}.${Month + 1}.${Year} ${Hour}:${Minutes}:${Seconds}`
+    }
+
+    const submitHandler = (e) => {
+        e.preventDefault()
+        const newOrder = {
+            name,
+            number,
+            email,
+            description,
+            date: currentDateTime()
+        }
+        postOrder(newOrder)
+        setData(initialData)
+    }
+
     return (
-        <section className={styles.section_form}>
+        <section className={styles.section_form} id='form'>
             <Container>
-                <h2 className={styles.title}>Залиште контакти і ми з Вами зв*яжемось</h2>
-                <form className={styles.form_wrapper}>
+                <h2 className={styles.title}>Залиште контакти і ми з Вами зв`яжемось</h2>
+                <form className={styles.form_wrapper} onSubmit={submitHandler}>
                     <div className={styles.box}>
-                        <label className={styles.form_label} for='name'>Имя</label>
-                        <input type='text' name='name' id='name' className={styles.form_input} />
+                        <label className={styles.form_label} htmlFor='name'>Имя *</label>
+                        <input type='text'
+                            name='name'
+                            id='name'
+                            className={styles.form_input}
+                            placeholder='Name'
+                            value={name}
+                            onChange={nameHandler}
+                            onBlur={handleBlur} />
+                        {nameDirty && nameError && <p className={styles.err_msg}>{nameError}</p>}
+
                     </div>
                     <div className={styles.box}>
-                        <label className={styles.form_label} for='number'>Телефон</label>
-                        <input type='text' name='number' id='number' className={styles.form_input} />
+                        <label className={styles.form_label} htmlFor='number'>Телефон *</label>
+                        <input type='text'
+                            name='number'
+                            id='number'
+                            placeholder='380000000000'
+                            className={styles.form_input}
+                            value={number}
+                            onChange={numberHandler}
+                            onBlur={handleBlur} />
+                        {numberDirty && numberError && <p className={styles.err_msg}>{numberError}</p>}
+
                     </div>
                     <div className={styles.box}>
-                        <label className={styles.form_label} for='email'>Почта</label>
-                        <input type='text' name='email' id='email' className={styles.form_input} />
+                        <label className={styles.form_label} htmlFor='email'>Email *</label>
+                        <input type='text'
+                            name='email'
+                            id='email'
+                            className={styles.form_input}
+                            placeholder='example@email.com'
+                            value={email}
+                            onChange={emailHandler}
+                            onBlur={handleBlur} />
+                        {emailDirty && emailError && <p className={styles.err_msg}>{emailError}</p>}
                     </div>
                     <div className={styles.box}>
-                        <label className={styles.form_label}>Тема звернення</label>
-                        <select className={styles.form_input}>
-                            <option >ne vubran</option>
-                            <option>variant 1</option>
-                            <option>variant 2</option>
+                        <label className={styles.form_label} htmlFor='description'>Тема звернення</label>
+                        <select id='description'
+                            name='description'
+                            className={styles.form_input}
+                            value={description}
+                            onChange={descHandler}
+                        >
+                            <option>Загальна тема звернення</option>
+                            <option>Тема 1</option>
+                            <option>Темя 2</option>
+                            <option>Темя 3</option>
                         </select>
                     </div>
-                    <button type='submit' className={styles.button}>Відправити</button>
+                    <button disabled={!formValid} type='submit' className={!formValid ? styles.dis_btn : styles.button}>Відправити</button>
                 </form>
             </Container>
-        </section>
+        </section >
     );
 };
 

@@ -28,12 +28,12 @@ const Services = () => {
         { title: 'Регистраторы расчетных операций и игровых автоматов на выполнение фиксальных и технических функций' },
     ]
     return (
-        <section className={styles.services}>
+        <section className={styles.services} id='services'>
             <Container>
                 <h2 className={styles.title}>Послуги</h2>
                 <ul className={styles.list}>
-                    {servicesName.map(elem => <li className={styles.item}>
-                        <a href='/' className={styles.link}>{elem.title}</a>
+                    {servicesName.map(elem => <li className={styles.item} key={`${elem.title}`}>
+                        <p className={styles.link}>{elem.title}</p>
                     </li>)}
                 </ul>
             </Container>
