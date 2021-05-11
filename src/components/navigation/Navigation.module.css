@@ -1,37 +1,48 @@
 .navigation {
   display: flex;
   flex-direction: column;
-  padding: 50px 0;
+  padding-left: 40px;
 }
 .link {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 30px;
-  line-height: 1.5;
+  font-weight: 700;
+  font-size: 2.14;
+  line-height: 1.16;
 
-  text-align: center;
-  letter-spacing: 0.2px;
-
-  color: #737373;
+  color: #f2f2f2;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .link:not(:last-child) {
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 .active {
   border-bottom: 1px solid #333;
+}
+.iconTel {
+  width: 18px;
+  margin-right: 10px;
+}
+.wrapperLogo {
+  width: 140px;
+  margin-bottom: 100px;
+}
+@media screen and (min-width: 768px) {
+  .wrapperLogo {
+    width: 190px;
+    margin-bottom: 100px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .navigation {
     flex-direction: row;
-    padding: 0;
+    padding-left: 0;
   }
   .link {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 24px;
+    font-weight: 500;
+    font-size: 1.7em;
+    line-height: 1.12;
   }
   .link:not(:last-child) {
     margin-bottom: 0;

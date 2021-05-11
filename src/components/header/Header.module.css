@@ -1,7 +1,11 @@
 .header {
-  background-color: #f7f7f7;
-  padding-top: 25px;
-  padding-bottom: 25px;
+  padding-top: 45px;
+  padding-bottom: 212px;
+  position: relative;
+
+  background: url("./images/bcLogoBig.svg") 147% -3% no-repeat,
+    url("./images/bcEcolar.svg") 2% 12% no-repeat, #00387b 100% 100%;
+  background-size: 200px, contain, 100% 100%;
 }
 .wrapper {
   display: flex;
@@ -22,8 +26,104 @@
 .body {
   overflow: hidden;
 }
-/* @media screen and (min-width: 1200px) {
-  .wrapper {
-    justify-content: space-between;
+
+.wrapperContent {
+  margin-top: 80px;
+  padding: 35px 30px 30px 30px;
+  background: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 25px 25px 0px;
+  max-width: 95%;
+}
+.title {
+  font-weight: 700;
+  font-size: 1.7em;
+  line-height: 1.16;
+  color: #333333;
+  margin-bottom: 25px;
+}
+.subtitle {
+  font-weight: 400;
+  font-size: 1.2em;
+  line-height: 1.16;
+  color: #333333;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.buttonLink {
+  display: block;
+  padding: 10px 55px;
+  font-weight: 700;
+  font-size: 1.7em;
+  line-height: 1.16;
+  color: #ffffff;
+  background-color: #00387b;
+  border-radius: 16px;
+  width: max-content;
+}
+.bcLogoMin {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 160px;
+  opacity: 0.7;
+}
+@media screen and (min-width: 768px) {
+  .header {
+    background: url("./images/bcLogoBig.svg") 60% 0% no-repeat,
+      url("./images/bcEcolar.svg") 2% 12% no-repeat, #00387b 100% 100%;
+    background-size: 310px, contain, 100% 100%;
   }
-} */
+  .wrapperContent {
+    margin-top: 80px;
+    padding: 25px 20px 20px 20px;
+    max-width: 80%;
+  }
+  .title {
+    font-size: 2.57em;
+    margin-bottom: 25px;
+  }
+  .subtitle {
+    font-size: 1.3em;
+    margin-bottom: 70px;
+  }
+  .buttonLink {
+    font-size: 1.7em;
+    margin-left: auto;
+  }
+  .bcLogoMin {
+    bottom: 30px;
+    right: 20px;
+    width: 280px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    background: url("./images/bcLogoBig.svg") 0% 0% no-repeat,
+      url("./images/bcEcolar.svg") 80% 0% no-repeat, #00387b 100% 100%;
+    background-size: contain, contain, 100% 100%;
+  }
+
+  .wrapperContent {
+    margin-top: 180px;
+    padding: 40px 20px 25px 218px;
+    max-width: 65%;
+  }
+  .title {
+    font-size: 2.57em;
+    margin-bottom: 25px;
+  }
+  .subtitle {
+    font-size: 1.3em;
+    margin-bottom: 70px;
+  }
+  .buttonLink {
+    font-size: 1.7em;
+    margin-left: auto;
+  }
+  .bcLogoMin {
+    bottom: 40px;
+    right: 40px;
+    width: 350px;
+  }
+}

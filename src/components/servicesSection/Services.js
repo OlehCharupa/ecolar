@@ -1,40 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '../сontainer/Container';
 import styles from './Services.module.css'
+import { servicesName } from '../../data/cardItem.js'
 
 const Services = () => {
-    const servicesName = [
-        { title: 'Электробытовое и аналогичное оборудование и комплектующие изделия (категории HOUS)' },
-        { title: 'Электронная аппаратура и устройства для развлечений (категория TRON)' },
-        { title: 'Радиооборудование и телекоммуникационные терминальное оборудование (категория R&TTE)' },
-        { title: 'Светотехническая продукция и комплектующие изделия к ней (категория LITE)' },
-        { title: 'Оборудование информационных технологий и офисное оборудование (категория OFF)' },
-        { title: 'Ручные электромеханические машины, переносные станки и инструмент слесарно-монтажный с изолирующими рукояткам' },
-        { title: 'Электрическое оборудование для медицинского применения (категория MED)' },
-        { title: 'Технологическое для пищевой, мясо-молочной промышленности, предприятий торговли, общественного питания и пищеблоков' },
-        { title: 'Электрооборудование для имерений, контроля и лабораторного применения (категория MEAS)' },
-        { title: 'Электрические кабели и шнуры (категория CABL)' },
-        { title: 'Выключатели для промышленных и бытовых приборов (категория CONT)' },
-        { title: 'Химические источники тока, батареи и аккумуляторы (категория BATT)' },
-        { title: 'Конденсаторы электрические и электронных бытовых приборов (категория CAP)' },
-        { title: 'Соединители электрические и инсталляционное оборудование (категория INST)' },
-        { title: 'Кабельная продукция' },
-        { title: 'Оборудование сварочное' },
-        { title: 'Машины и оборудование' },
-        { title: 'Машины электрические вращающиеся' },
-        { title: 'Источники света' },
-        { title: 'Технические средства охранного назначения, систем пожарной сигнализации и их составные части' },
-        { title: 'средства индивидуальной защиты работающих' },
-        { title: 'Регистраторы расчетных операций и игровых автоматов на выполнение фиксальных и технических функций' },
-    ]
+
+    const [filter, setFilter] = useState("")
+
+    const inputFilter = ({ target }) => {
+        setFilter(target.value)
+    }
+    const filterName = () => {
+        const filterArray = servicesName.filter(product => product.title.toLowerCase().includes(filter.toLowerCase()))
+        if (filterArray.length >= 1) {
+            return filterArray
+        } else {
+            return servicesName
+        }
+    }
     return (
         <section className={styles.services} id='services'>
             <Container>
-                <h2 className={styles.title}>Послуги</h2>
+                <div className={styles.wrapper}>
+                    <h2 className={styles.title}>Послуги</h2>
+                    <label className={styles.label} >
+                        <input
+                            type="text"
+                            name="filter"
+                            className={styles.inputSearch}
+                            value={filter}
+                            onChange={inputFilter}
+                        />
+                    </label>
+                </div>
                 <ul className={styles.list}>
-                    {servicesName.map(elem => <li className={styles.item} key={`${elem.title}`}>
-                        <p className={styles.link}>{elem.title}</p>
-                    </li>)}
+                    {filterName().map(elem =>
+                        <li className={styles.item} key={`${elem.title[1]}${elem.title[25]}`}>
+                            <div className={styles.wrapperImg}>
+                                <img className={styles.image} src={elem.image} alt="img" />
+                            </div>
+                            <div className={styles.wrapperContent}>
+                                <h3 className={styles.titleCard}>{elem.title}</h3>
+                                <p className={styles.text}>{elem.description}</p>
+                            </div>
+                        </li>)}
                 </ul>
             </Container>
         </section>
