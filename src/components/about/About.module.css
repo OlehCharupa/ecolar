@@ -1,9 +1,8 @@
 .about {
   padding-top: 60px;
   padding-bottom: 65px;
-  background: url("./images/dc.svg") repeat,
-    url("./images/bcAbout.svg") -50% -50% round;
-  background-size: 69px, 55%;
+  background: url("./images/bcAbout.svg") -50% -50% round;
+  background-size: 55%;
 }
 .wrapper {
   width: 100%;

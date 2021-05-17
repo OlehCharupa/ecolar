@@ -23,6 +23,9 @@
   width: 18px;
   margin-right: 10px;
 }
+.iconLogin {
+  width: 20px;
+}
 .wrapperLogo {
   width: 140px;
   margin-bottom: 100px;
@@ -41,7 +44,7 @@
   }
   .link {
     font-weight: 500;
-    font-size: 1.7em;
+    font-size: 1.6em;
     line-height: 1.12;
   }
   .link:not(:last-child) {

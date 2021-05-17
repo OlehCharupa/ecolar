@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Navigation.module.css'
 // import { NavLink } from 'react-router-dom'
 import { useWindowWidth } from "@react-hook/window-size";
@@ -10,9 +10,18 @@ import iconContacts from "./images/iconContacts.svg";
 import iconSearch from "./images/iconSearch.svg";
 import iconTel from "./images/iconTel.svg";
 import iconUa from "./images/iconUa.svg";
+import iconLogin from "./images/login.svg"
 import Logo from '../logo/Logo';
+import Modal from '../modal/Modal';
+import PlugLogin from '../plugLogin/PlugLogin';
 
 const Navigation = ({ onModalClose = null }) => {
+
+    const [openModal, setOpenModal] = useState(false)
+
+    const toggleModal = () => {
+        setOpenModal(!openModal)
+    }
 
     const onlyWidth = useWindowWidth();
 
@@ -22,12 +31,12 @@ const Navigation = ({ onModalClose = null }) => {
             <nav className={styles.navigation}>
                 <Link
                     to='form'
-                    activeClass={styles.active}
-                    className={styles.link}
                     spy={true}
                     smooth={true}
                     // offset={-30}
                     duration={800}
+                    activeClass={styles.active}
+                    className={styles.link}
                     onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                     <img src={iconTel} className={styles.iconTel} alt="iconTel" />
                 Зворотній зв`язок
@@ -57,7 +66,7 @@ const Navigation = ({ onModalClose = null }) => {
                 Послуги
                 </Link>
                 <Link
-                    to='contacts'
+                    to='footer'
                     activeClass={styles.active}
                     className={styles.link}
                     spy={true}
@@ -74,6 +83,20 @@ const Navigation = ({ onModalClose = null }) => {
                     <img src={iconUa} className={styles.iconTel} alt="iconContacts" />
                 UA
                 </a>
+                <span href="/"
+                    className={styles.link}
+                    onClick={() => { toggleModal() && onlyWidth < 1199 && onModalClose && onModalClose() }}
+                >
+                    <img src={iconLogin} className={styles.iconLogin} alt="iconLogin" />
+                </span>
+                <Modal
+                    arrowVisible
+                    toggleModal={toggleModal}
+                    openModal={openModal}
+                >
+                    <PlugLogin toggleModal={toggleModal} />
+                </Modal>
+
 
                 {/* <NavLink
                 key='login'

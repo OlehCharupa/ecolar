@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Container from '../сontainer/Container';
 import styles from './Services.module.css'
-import { servicesName } from '../../data/cardItem.js'
+import { servicesName } from '../../data/product.js'
 
 const Services = () => {
 
@@ -35,13 +35,12 @@ const Services = () => {
                 </div>
                 <ul className={styles.list}>
                     {filterName().map(elem =>
-                        <li className={styles.item} key={`${elem.title[1]}${elem.title[25]}`}>
+                        <li className={styles.item} key={elem.id}>
                             <div className={styles.wrapperImg}>
                                 <img className={styles.image} src={elem.image} alt="img" />
                             </div>
                             <div className={styles.wrapperContent}>
                                 <h3 className={styles.titleCard}>{elem.title}</h3>
-                                <p className={styles.text}>{elem.description}</p>
                             </div>
                         </li>)}
                 </ul>

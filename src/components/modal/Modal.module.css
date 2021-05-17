@@ -1,0 +1,86 @@
+.open1 {
+  overflow: hidden;
+}
+.close1 {
+  overflow: visible;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(33, 33, 33, 0.5);
+  z-index: 1200;
+}
+
+.modal {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 22px 22px 40px 40px rgba(0, 56, 123, 0.61);
+  padding: 40px 15px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 200ms ease-in-out;
+  outline: none;
+  background-image: url("./image/icon-close.svg");
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  transition: all 300ms ease-in;
+}
+
+.closeButton:hover,
+.closeButton:focus {
+  background-image: url("./image/icon-close-wite.svg");
+  background-color: rgb(0, 56, 123);
+  background-position: center;
+}
+
+@media (max-width: 767px) {
+  .modal {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .modal {
+    max-width: 70%;
+    height: auto;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 60px 60px;
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .modal {
+    padding: 90px 90px;
+  }
+  .overlay {
+    top: 0;
+  }
+}
