@@ -156,12 +156,12 @@ const Form = () => {
                     <div className={styles.wrapperAll}>
                         <div className={styles.boxInput}>
                             <div className={styles.box}>
-                                <label className={styles.form_label} htmlFor='name'>Им'я *</label>
+                                <label className={styles.form_label} htmlFor='name'>Ім'я *</label>
                                 <input type='text'
                                     name='name'
                                     id='name'
                                     className={styles.form_input}
-                                    placeholder='Name'
+                                    placeholder="Ім'я"
                                     value={name}
                                     onChange={nameHandler}
                                     onBlur={handleBlur} />

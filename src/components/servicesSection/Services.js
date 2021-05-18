@@ -30,6 +30,7 @@ const Services = () => {
                             className={styles.inputSearch}
                             value={filter}
                             onChange={inputFilter}
+                            placeholder="Пошук по категорії"
                         />
                     </label>
                 </div>
@@ -37,7 +38,7 @@ const Services = () => {
                     {filterName().map(elem =>
                         <li className={styles.item} key={elem.id}>
                             <div className={styles.wrapperImg}>
-                                <img className={styles.image} src={elem.image} alt="img" />
+                                <img className={styles.image} src={elem.image} alt="img" width="145px" height="110px" />
                             </div>
                             <div className={styles.wrapperContent}>
                                 <h3 className={styles.titleCard}>{elem.title}</h3>

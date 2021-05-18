@@ -8,6 +8,7 @@ import bcLogoMin from "./images/bcLogoMin.svg"
 import MenuModal from '../menuModal/MenuModal';
 import Navigation from '../navigation/Navigation';
 import Container from '../сontainer/Container'
+// eslint-disable-next-line no-unused-vars
 import { Link, animateScroll as scroll } from "react-scroll";
 
 
@@ -67,10 +68,10 @@ const Header = () => {
             </Container>
             <div className={styles.wrapperContent}>
                 <h1 className={styles.title}>
-                    Надаемо сертифікації та оцінки відповідно технічним регламентам
+                    Надаємо послуги з сертифікації та оцінки відповідності технічним регламентам
                 </h1>
                 <p className={styles.subtitle}>
-                    З нашою допомогою Ви зможете отримати необхідну інформацію по всім питанням, пов’язаним з отриманням сертифікатів та іншим дозвільних документів для ввозу та реалізації продукції на території України.
+                    Ми зберігаємо ваш час, ви отримуєте результат
                 </p>
                 <Link
                     className={styles.buttonLink}
@@ -78,8 +79,8 @@ const Header = () => {
                     spy={true}
                     smooth={true}
                     duration={800}>
-                    Call back
-                    </Link>
+                    Отримати
+                </Link>
             </div>
             <img className={styles.bcLogoMin} src={bcLogoMin} alt="bcLogoMin" />
         </header>

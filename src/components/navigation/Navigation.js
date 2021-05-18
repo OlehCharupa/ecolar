@@ -29,18 +29,13 @@ const Navigation = ({ onModalClose = null }) => {
         <>
             {onlyWidth < 1199 && <div className={styles.wrapperLogo}><Logo /></div>}
             <nav className={styles.navigation}>
-                <Link
-                    to='form'
-                    spy={true}
-                    smooth={true}
-                    // offset={-30}
-                    duration={800}
-                    activeClass={styles.active}
+                <a
+                    href="tel:+380666013002"
                     className={styles.link}
                     onClick={() => { onlyWidth < 1199 && onModalClose && onModalClose() }}>
                     <img src={iconTel} className={styles.iconTel} alt="iconTel" />
-                Зворотній зв`язок
-                </Link>
+                Подзвонити
+                </a>
                 <Link
                     to='about'
                     activeClass={styles.active}

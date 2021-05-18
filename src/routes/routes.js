@@ -9,7 +9,7 @@ export const paths = {
 const routes = [
     {
         path: paths.home,
-        lable: 'HomePage',
+        label: 'homePage',
         exact: true,
         component: lazy(() => import('../pages/HomePage/HomePage') /* webpackChunkName: "home-page" */),
         private: false,

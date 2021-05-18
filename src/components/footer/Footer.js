@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from '../сontainer/Container';
 import styles from './Footer.module.css'
 import logoFooter from './images/logoFooter.svg'
 import iconAddress from "./images/iconAddress.svg"
