@@ -180,7 +180,7 @@ const Form = () => {
                                 {numberDirty && numberError && <p className={styles.err_msg}>{numberError}</p>}
                             </div>
                             <div className={styles.box}>
-                                <label className={styles.form_label} htmlFor='email'>Email *</label>
+                                <label className={styles.form_label} htmlFor='email'>Пошта *</label>
                                 <input type='text'
                                     name='email'
                                     id='email'
