@@ -151,7 +151,7 @@ const Form = () => {
     return (
         <section className={styles.section_form} id='form'>
             <Container>
-                <h2 className={styles.title}>Залиште контакти і ми з Вами зв'яжемось</h2>
+                <h2 className={styles.title}>Залиште контакти і ми з вами зв'яжемось</h2>
                 <form className={styles.form_wrapper} onSubmit={submitHandler}>
                     <div className={styles.wrapperAll}>
                         <div className={styles.boxInput}>

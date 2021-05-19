@@ -180,7 +180,7 @@ export const servicesName = [
 
     {
         id: '25',
-        title: "Дорожньо транспортні засоби",
+        title: "Дорожні транспортні засоби",
         image: image25
 
     },
